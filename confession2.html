@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="./reset.css">
+		<title></title>
+    <style>
+      body {
+        height: 100vh;
+        background: #000;
+      }
+      .particle {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, .5)
+      }
+      .heartWrapper {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      #loveHeart {
+        width: 100vw;
+        height: 100vw;
+      }
+      
+      .code {
+        position: absolute;
+        top: 175px;
+        left: 10px;
+        right: 10px;
+        z-index: 1;
+        font-size: 16PX;
+        color: #d4d4d4;
+        /* background: #000; */
+        margin: 10px;
+      }
+      .variables {
+        color: #9cdcfe;
+      }
+      .comments {
+        color: #6A9955;
+      }
+      .keywords {
+        color: #569cd6;
+      }
+      .attribute {
+        color: #d7ba7d;
+      }
+      .string {
+        color: #ce9178;
+      }
+      .number {
+        color: #b5cea8;
+      }
+      
+      .imgs {
+        width: 90vw;
+      }
+      
+    </style>
+    <link rel="stylesheet" href="css/site.min.css">
+	</head>
+	<body>
+    <!-- 开场白 -->
+    <div class="prologue">
+      <canvas class="canvas" width="836" height="940"></canvas>
+    
+      <div class="help">?</div>
+    
+      <div class="ui">
+        <input class="ui-input" type="text">
+        <span class="ui-return">↵</span>
+      </div>
+    
+      <div class="overlay">
+        <div class="tabs">
+          <div class="tabs-labels">
+            <span class="tabs-label tabs-label--active">Commands</span><span class="tabs-label">Info</span><span class="tabs-label">Share</span>
+          </div>
+    
+          <div class="tabs-panels">
+            <ul class="tabs-panel commands tabs-panel--active">
+              <li class="commands-item">
+                <span class="commands-item-title">Text</span><span class="commands-item-info" data-demo="Hello :)">Type anything</span><span class="commands-item-action">Demo</span>
+              </li>
+              <li class="commands-item">
+                <span class="commands-item-title">Countdown</span><span class="commands-item-info" data-demo="#countdown 10">#countdown<span class="commands-item-mode">number</span></span><span class="commands-item-action">Demo</span>
+              </li>
+              <li class="commands-item">
+                <span class="commands-item-title">Icon</span><span class="commands-item-info" data-demo="#icon thumbs-up">#icon<span class="commands-item-mode">name</span>&nbsp;(using
+                  <a href="https://fortawesome.github.io/Font-Awesome/#icons-new" target="_blank">Font Awesome</a>)</span><span class="commands-item-action">Demo</span>
+              </li>
+              <li class="commands-item">
+                <span class="commands-item-title">Time</span><span class="commands-item-info" data-demo="#time">#time</span><span class="commands-item-action">Demo</span>
+              </li>
+              <li class="commands-item">
+                <span class="commands-item-title">Rectangle</span><span class="commands-item-info" data-demo="#rectangle 30x15">#rectangle<span class="commands-item-mode">width x height</span></span><span class="commands-item-action">Demo</span>
+              </li>
+              <li class="commands-item">
+                <span class="commands-item-title">Circle</span><span class="commands-item-info" data-demo="#circle 25">#circle<span class="commands-item-mode">diameter</span></span><span class="commands-item-action">Demo</span>
+              </li>
+    
+              <li class="commands-item commands-item--gap">
+                <span class="commands-item-title">Animate</span><span class="commands-item-info" data-demo="The time is|#time|#countdown 3|#icon thumbs-up"><span class="commands-item-mode">command1</span>&nbsp;|<span class="commands-item-mode">command2</span></span>
+                <span class="commands-item-action">Demo</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="particle" id="particle"></div> -->
+    <!-- 文字表白 -->
+    <div class="code" style="display:none;">
+      <div class="comments">/**</div>
+      <div class="comments">&nbsp;* to 我最爱的小仙女：</div>
+      <div class="comments">&nbsp;* 我想用我自己的表达方式来</div>
+      <span class="keywords">var</span> <span class="variables">a</span> = 1;
+      a * 2 = 2;
+    </div>
+    <!-- 画心 -->
+    <!-- <div class="heartWrapper" style="display:none;">
+      <div id="loveHeart">
+        <canvas id="garden"></canvas>
+      </div>
+    </div> -->
+    
+    <!-- 烟花 -->
+    <div class="fireworks" style="display:none;">
+      <div class="star comet"></div>
+      <script src="js/index.js"></script>
+      <!--烟花部分-->
+      <canvas id="cas" style="background-color: rgba(0, 5, 24, 1); z-index: 9999" width="1872" height="940">
+        浏览器不支持canvas
+      </canvas>
+      <!-- 城市背景 -->
+      <div class="city">
+        <img src="img/city.png" alt="">
+      </div>
+      <img src="img/moon.png" alt="" id="moon" style="visibility: hidden">
+      <div style="display: none">
+        <!-- <div class="shape"><img class="imgs" src="./img/01.jpg" alt=""></div> -->
+        <div class="shape">💘💘💘</div>
+        <div class="shape"><img class="imgs" src="./img/02.jpg" alt=""></div>
+        <div class="shape">20211202</div>
+        <!-- <div class="shape"><img class="imgs" src="./img/03.jpg" alt=""></div> -->
+        <div class="shape"><img class="imgs" src="./img/04.jpg" alt=""></div>
+        <div class="shape"><img class="imgs" src="./img/05.jpg" alt=""></div>
+        <div class="shape"><img class="imgs" src="./img/06.jpg" alt=""></div>
+        <!-- <div class="shape"><img class="imgs" src="./img/07.jpg" alt=""></div> -->
+        <div class="shape"><img class="imgs" src="./img/08.jpg" alt=""></div>
+      </div>
+    </div>
+    <script src="./jquery-1.8.0.min.js"></script>
+    <script src="./snow.js"></script>
+    <script src="./typewriter.js"></script>
+    <script src="./garden.js"></script>
+    <script src="./functions.js"></script>
+    <!-- <script src="./lizi.js"></script> -->
+    <script src="js/fire.js"></script>
+    <!-- <script src="js/talk.js"></script> -->
+    <script src="js/shape-shifter.js"></script>
+    
+    <script>
+      
+//       setTimeout(function () {
+//         startHeartAnimation();
+//       }, 0);
+    </script>
+	</body>
+</html>

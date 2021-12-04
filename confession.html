@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="./reset.css">
+		<title></title>
+    <style>
+      body {
+        height: 100vh;
+        background: #000;
+      }
+      .particle {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, .5)
+      }
+      .heartWrapper {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      #loveHeart {
+        width: 100vw;
+        height: 100vw;
+      }
+      
+      .code {
+        font-size: 16PX;
+        color: #d4d4d4;
+        background: #000;
+        margin: 10px;
+      }
+      .variables {
+        color: #9cdcfe;
+      }
+      .comments {
+        color: #6A9955;
+      }
+      .keywords {
+        color: #569cd6;
+      }
+      .attribute {
+        color: #d7ba7d;
+      }
+      .string {
+        color: #ce9178;
+      }
+      .number {
+        color: #b5cea8;
+      }
+    </style>
+	</head>
+	<body>
+    <!-- <div class="particle" id="particle"></div> -->
+    <div class="code">
+      <div class="comments">// 下面是一段测试用的文字，为了达到一定的长度，多点字词句</div>
+      <span class="keywords">var</span> <span class="variables">a</span> = 1;
+      a * 2 = 2;
+    </div>
+    <div class="heartWrapper">
+      <div id="loveHeart">
+        <canvas id="garden"></canvas>
+      </div>
+    </div>
+    <script src="./jquery-1.8.0.min.js"></script>
+    <script src="./snow.js"></script>
+    <script src="./typewriter.js"></script>
+    <script src="./garden.js"></script>
+    <script src="./functions.js"></script>
+    <!-- <script src="./lizi.js"></script> -->
+    
+    <script>
+//       $('.code').typewriter();
+//       setTimeout(function () {
+// 				startHeartAnimation();
+// 			}, 0);
+      
+//       $(function(){
+//         const SnowObj = $.fn.snow({ 
+//           minSize: 5,		//雪花的最小尺寸
+//           maxSize: 30, 	//雪花的最大尺寸
+//           newOn: 300		//雪花出现的频率 这个数值越小雪花越多
+//         });
+//       });
+    </script>
+	</body>
+</html>

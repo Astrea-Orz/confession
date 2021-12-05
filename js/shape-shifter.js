@@ -38,7 +38,7 @@ var S = {
 
 window.addEventListener("load", function () {
   S.init();
-});
+}, 2000)
 
 S.Drawing = (function () {
   var canvas,

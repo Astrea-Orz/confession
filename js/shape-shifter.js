@@ -35,9 +35,12 @@ var S = {
   },
 };
 
-window.addEventListener("load", function () {
+setTimeout(() => {
   S.init();
-});
+}, 2000)
+// window.addEventListener("load", function () {
+//   S.init();
+// });
 
 S.Drawing = (function () {
   var canvas,

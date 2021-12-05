@@ -17,7 +17,6 @@ var S = {
     /* 背景颜色 */
     document.body.classList.add("body--ready");
     /* 如果url没有检查到内容则用自定义内容 */
-    console.log(i)
     if (i !== -1) {
       S.UI.simulate(decodeURI(action).substring(i + 3));
     } else {
@@ -36,9 +35,9 @@ var S = {
 };
 
 
-window.addEventListener("load", function () {
+$(document).ready(function() {
   S.init();
-}, 2000)
+})
 
 S.Drawing = (function () {
   var canvas,

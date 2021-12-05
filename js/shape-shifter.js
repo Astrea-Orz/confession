@@ -21,12 +21,12 @@ var S = {
     if (i !== -1) {
       S.UI.simulate(decodeURI(action).substring(i + 3));
     } else {
-//       S.UI.simulate(
-//         "❤|3|2|1|洋|杨|I|Love|U|❤"
-//       );
       S.UI.simulate(
-        "❤|1"
+        "❤|3|2|1|洋|杨|I|Love|U|❤"
       );
+//       S.UI.simulate(
+//         "❤|1"
+//       );
     }
 
     S.Drawing.loop(function () {
